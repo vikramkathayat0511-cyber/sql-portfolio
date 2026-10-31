@@ -57,5 +57,60 @@ SELECT ROUND(MAX(Milliseconds)/60000.0,2) AS Longest_min,
 FROM Track;
 
 -- Result: Longest_min 88.12, Shortest_min 0.02, Average_min 6.56
-/* Insight: The longest track (88.12 min) is about 13 times the average (6.56 min),
+/* Insight: The longest track (88.12 min) is about 13 times the average (6.56 min)
    so it is an outlier. Worth checking which track it is and its media type.*/
+
+
+-- Q7: How many customers are in each country, most first?
+SELECT Country,
+       COUNT(CustomerId) AS Total_customers
+FROM Customer
+GROUP BY Country
+ORDER BY Total_customers DESC,Country;
+
+-- Answers the follow-up from Q1
+-- Result: USA 13, Canada 8, France 5, Brazil 5, Germany 4, United Kingdom 3, then 2 or fewer elsewhere
+/* Insight: No single country dominates the customer base. The USA has the most customers
+   (13 of 59, about 22%), and the USA and Canada together make up 21, about 36%.
+   Most other countries have only 1 or 2 customers. Worth checking whether the countries
+   with the most customers also bring in the most revenue.*/
+   
+   
+-- Q8: How many invoices does each customer have?
+SELECT CustomerId,
+       COUNT(InvoiceId) AS Total_invoices
+FROM Invoice
+GROUP BY CustomerId
+ORDER BY Total_invoices DESC;
+	   
+-- Result: 58 customers have 7 invoices each, and 1 customer has 6. This matches the roughly 7 invoices per customer from Q4.
+/* Insight: Nearly every customer has 7 invoices, so spend differences must come from invoice size.
+   Worth checking total spend per customer.*/
+   
+
+-- Q9: What is the total revenue for each billing country, highest first?
+SELECT BillingCountry AS Country,
+       ROUND(SUM(Total),2) AS Total_revenue
+FROM Invoice
+GROUP BY BillingCountry
+ORDER BY Total_revenue DESC;
+
+-- Answers the follow-ups from Q3 and Q7
+-- Result: USA 523.06, Canada 303.96, France 195.10, Brazil 190.10, Germany 156.48
+/* Insight: The USA brings in about 22% of revenue, close to its 22% share of customers in Q7,
+   so revenue follows customer count. Worth checking revenue per customer by country to see which markets spend more per head.*/
+   
+  
+-- Q10: Who are the top 5 customers by total spend?
+SELECT CustomerId,
+       ROUND(SUM(Total),2) AS Total_spend
+FROM Invoice
+GROUP BY CustomerId
+ORDER BY Total_spend DESC, CustomerId
+LIMIT 5;
+
+-- Answers the follow-up from Q8
+-- Result: Customer 6 (49.62), 26 (47.62), 57 (46.62), 45 (45.62), 46 (45.62)
+/* Insight: Customers buy equally often (Q8), but spend still varies. The top customer
+   spent 49.62, about 26% above the 39.47 average (Q3). The top 5 together spent 235.10,
+   roughly 10% of revenue, so no small group dominates. Worth checking spend per country.*/
