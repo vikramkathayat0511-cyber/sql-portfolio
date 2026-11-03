@@ -114,3 +114,76 @@ LIMIT 5;
 /* Insight: Customers buy equally often (Q8), but spend still varies. The top customer
    spent 49.62, about 26% above the 39.47 average (Q3). The top 5 together spent 235.10,
    roughly 10% of revenue, so no small group dominates. Worth checking spend per country.*/
+   
+   
+-- Q11: Which countries have fewer than 5 customers?
+SELECT Country,
+       COUNT(CustomerId) AS Total_customers
+FROM Customer
+GROUP BY Country
+HAVING COUNT(CustomerID) < 5
+ORDER BY Total_customers DESC;
+
+-- Result: 20 countries have fewer than 5 customers (Germany 4, United Kingdom 3, then 2 or fewer)
+/* Insight: 20 of 24 countries have fewer than 5 customers, yet together they hold about 47% of all customers
+   Worth checking whether these small markets bring in less revenue per customer than the big ones.*/
+   
+
+-- Q12: How many invoices over $5 does each billing country have?
+SELECT BillingCountry,
+       COUNT(*) AS Invoices_over_5
+FROM Invoice
+WHERE Total > 5
+GROUP BY BillingCountry
+ORDER BY Invoices_over_5 DESC, BillingCountry;
+
+-- Result: USA 40, Canada 24, Brazil 15, France 15, Germany 12, United Kingdom 9, then 6 or fewer
+/* Insight: USA (40) and Canada (24) lead on invoices over $5, matching their lead in revenue (Q9).
+    Worth checking what share of each country's invoices are over $5, to see which markets have unusually large orders.*/
+	
+	
+-- Q13: What is the average invoice of Billing Countries, and how many invoices is each based on?
+SELECT BillingCountry AS Country,
+      ROUND(AVG(Total),2) AS Average_invoice,
+	  COUNT(*) AS Invoices_count
+FROM Invoice
+GROUP BY BillingCountry
+ORDER BY Average_invoice DESC, BillingCountry;
+
+-- Answers the follow-up from Q4
+-- Result: highest Chile 6.66 (7 invoices), Hungary 6.52 (7), Ireland 6.52 (7)
+/* Insight: The highest averages come from countries with only 7 invoices, meaning one customer
+   each (Q8), so a single customer can decide the average. Worth checking the ranking again
+   using only countries with at least 10 invoices.*/
+   
+   
+-- Q14: What percentage of all customers does each country account for?
+SELECT Country,
+       COUNT(*) AS Total_customers,
+	   ROUND(COUNT(*) * 100.0/(SELECT COUNT(*) FROM Customer),1) AS Pct_of_customers
+FROM Customer
+GROUP BY Country
+ORDER BY pct_of_customers DESC, Country;
+
+-- Builds on Q7: turns the customer counts into percentages
+-- Result: USA 22.0%, Canada 13.6%, France 8.5%, Brazil 8.5%, Germany 6.8%, United Kingdom 5.1%.
+/* Insight: The USA and Canada together account for about 36% of customers, and no other
+   country exceeds 9%, so the customer base is spread across many small markets.*/
+   
+   
+-- Q15: What are the maximum, minimum and average number of invoices per day?
+SELECT MAX(Invoice_per_day) AS  Max_invoices_per_day,
+       MIN(Invoice_per_day) AS Min_invoices_per_day,
+	   ROUND(AVG(Invoice_per_day),2) AS Avg_invoices_per_day
+FROM (SELECT DATE(InvoiceDate) AS Invoice_day,
+             COUNT(*) AS Invoice_per_day
+      FROM Invoice
+      GROUP BY DATE(InvoiceDate));
+	  
+-- Result: Max 2, Min 1, Average 1.16 Invoices per day.
+/* Insight: Sales are spread out, with at most 2 invoices on any day.
+   Worth checking invoices per month or year to see if sales change over time.*/
+   
+   
+
+   
