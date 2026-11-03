@@ -18,6 +18,8 @@ The database covers customers, invoices, tracks, albums, artists and genres. Eac
 - The average invoice is 5.65, so each customer places roughly 7 invoices on average.
 - Track prices only range from 0.99 to 1.99.
 - The longest track is 88.12 minutes, about 13 times the average of 6.56 minutes.
+- The USA brings in about 22% of revenue, matching its share of customers.
+- The highest average invoices come from countries with a single customer, so they are unreliable.
 
 ## How each query is documented
 
