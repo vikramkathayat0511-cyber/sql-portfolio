@@ -39,6 +39,3 @@ The database covers customers, invoices, tracks, albums, artists and genres. Eac
 - SQLite
 - DB Browser for SQLite
 - Dataset: Chinook sample database
-- SQLite
-- DB Browser for SQLite
-- Dataset: Chinook sample database
