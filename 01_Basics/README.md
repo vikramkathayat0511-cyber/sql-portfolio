@@ -5,11 +5,11 @@ SQL fundamentals on the Chinook music store database.
 
 | File | Topics | Queries |
 |---|---|---|
-| [Aggregate_functions.sql](Aggregate_functions.sql) | COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING, subqueries | 15 |
-| [String_functions.sql](String_functions.sql) | concatenation, LIKE, SUBSTR, INSTR, LENGTH, REPLACE, UPPER, LOWER | 10 |
-| [Numeric_functions.sql](Numeric_functions.sql) | ROUND, ABS, CAST, unit conversion | 5 |
-| [Date_functions.sql](Date_functions.sql) | strftime, julianday, MIN and MAX on dates | 4 |
-| [Conditional_logic.sql](Conditional_logic.sql) | CASE WHEN, COALESCE, NULL handling | 4 |
+| [aggregate_functions.sql](aggregate_functions.sql) | COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING, subqueries | 15 |
+| [string_functions.sql](string_functions.sql) | concatenation, LIKE, SUBSTR, INSTR, LENGTH, REPLACE, UPPER, LOWER | 10 |
+| [numeric_functions.sql](numeric_functions.sql) | ROUND, ABS, CAST, unit conversion | 5 |
+| [date_functions.sql](date_functions.sql) | strftime, julianday, MIN and MAX on dates | 4 |
+| [conditional_logic.sql](conditional_logic.sql) | CASE WHEN, COALESCE, NULL handling | 4 |
 
 
 # Findings
