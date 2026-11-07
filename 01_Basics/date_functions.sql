@@ -5,7 +5,8 @@
 
 
 -- Checking Date COLUMN
-SELECT InvoiceDate FROM Invoice LIMIT 5; -- In yyyy-mm-dd format with timestamp 
+SELECT InvoiceDate FROM Invoice LIMIT 5; 
+-- In yyyy-mm-dd format with timestamp 
 
 
 -- Q1: How many invoices and how much revenue are there in each year?
