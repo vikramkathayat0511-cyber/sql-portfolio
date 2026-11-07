@@ -14,6 +14,6 @@ SQL fundamentals on the Chinook music store database.
 
 # Findings
 - Revenue is roughly flat from 2021 to 2025 (449 to 481 a year), with no strong seasonality.
-- 22% of customers (13 of 59) haven't bought for over a year.
+- 22% of customers (13 of 59) haven't bought for over a year,as of the last invoice (22 December 2025).
 - Rounding every invoice down would lose about 16.7% of revenue, so truncating with CAST badly understates totals, while ROUND stays within about 1%.
 - Invoices are spread fairly evenly across sizes (Small 41.5%, Large 29.6%, Medium 28.9%).
