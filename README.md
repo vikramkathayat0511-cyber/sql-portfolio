@@ -8,8 +8,8 @@ The database covers customers, invoices, tracks, albums, artists and genres. Eac
 
 | Folder | What it covers | Status |
 |---|---|---|
-| [01_Basics](01_Basics) | Aggregate functions: COUNT, SUM, AVG, MIN, MAX | Done |
-| 02_Joins | Combining tables | Done |
+| [01_Basics](01_Basics/) | Aggregate, string, numeric, date and conditional functions (38 queries) | Done |
+| [02_Joins](02_Joins/) | JOIN, LEFT JOIN, multi-table chains, self-join (6 queries) | Done |
 | 03_Window_Functions | Rankings and running totals | Planned |
 
 ## Key findings so far
