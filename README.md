@@ -20,6 +20,9 @@ The database covers customers, invoices, tracks, albums, artists and genres. Eac
 - The longest track is 88.12 minutes, about 13 times the average of 6.56 minutes.
 - The USA brings in about 22% of revenue, matching its share of customers.
 - The highest average invoices come from countries with a single customer, so they are unreliable.
+- Rock earns about 35% of revenue, and the top four genres about 73%.
+- The 10 longest tracks are all video files, which explains the long-track tail in the basic queries.
+- About 43% of the catalogue (1,519 of 3,503 tracks) has never been sold.
 
 ## How each query is documented
 
