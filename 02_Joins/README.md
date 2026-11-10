@@ -4,7 +4,7 @@ Combining tables in the Chinook music store database.
 
 | File | Topics | Queries |
 |---|---|---|
-| [joins.sql](joins.sql) | JOIN, LEFT JOIN, multi-table joins, self-join, finding unmatched rows | 6 |
+| [Joins.sql](Joins.sql) | JOIN, LEFT JOIN, multi-table joins, self-join, finding unmatched rows | 6 |
 
 ## Queries
 
