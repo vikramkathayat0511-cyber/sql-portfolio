@@ -19,7 +19,7 @@ ORDER BY Spending DESC, Customer_name;
 -- Builds on Q10 in the aggregate file, now with names and countries
 -- Result: top spenders are Helena Holý (Czech Republic, 49.62), Richard Cunningham (USA, 47.62),Luis Rojas (Chile, 46.62)
 /* Insight: The top 5 spenders come from five different countries. Luis Rojas (Chile), Hugh O'Reilly (Ireland) and 
-   Ladislav Kovács (Hungary) explain why those countries had the highest average invoices in Q13 of aggregate_functions.sql.*/
+            Ladislav Kovács (Hungary) explain why those countries had the highest average invoices in Q13 of aggregate_functions.sql.*/
    
    
 -- Q2: What are the 10 longest tracks, and what media type is each?
@@ -35,7 +35,7 @@ LIMIT 10;
 -- Follows up on Q1 of numeric_functions.sql (the longest tracks).
 -- Result: The 10 longest tracks run from 88.12 down to 48.78 minutes, and all 10 are Protected MPEG-4 video files.
 /* Insight: All 10 longest tracks are video files (probably TV episodes),
-   which explains why the average track length is pulled up.*/
+            which explains why the average track length is pulled up.*/
    
    
 -- Q3: Which genres generate the most revenue?
@@ -52,7 +52,7 @@ ORDER BY Revenue_generated DESC, Genre;
 -- Answers the follow-up from Q2 of aggregate_functions.sql (are sales concentrated in a few genres?)
 -- Result: Rock 826.65, Latin 382.14, Metal 261.36, Alternative & Punk 241.56, TV Shows 93.53, ...
 /* Insight: Revenue is concentrated in a few genres. Rock earns about 35.5% and the top four about 73.5%.
-   Worth checking whether Rock's lead comes from having the most tracks or from selling more per track.*/
+            Worth checking whether Rock's lead comes from having the most tracks or from selling more per track.*/
    
 -- Q4: Who are the top 5 artists by revenue?
 SELECT Ar.Name AS Artist_name,
@@ -69,8 +69,8 @@ ORDER BY Revenue_earned DESC, Artist_name
 LIMIT 5;
 
 -- Result: Iron Maiden 138.60, U2 105.93, Metallica 90.09, Led Zeppelin 86.13, Lost 81.59.
-/* Insight: -- Insight: Iron Maiden leads with about 6% of revenue,
-   and the top 5 artists earn about 22% combined, so revenue is spread across many artists.*/
+/* Insight: Iron Maiden leads with about 6% of revenue,
+            and the top 5 artists earn about 22% combined, so revenue is spread across many artists.*/
    
    
 -- Q5: Which tracks have never been sold?
@@ -84,7 +84,7 @@ WHERE IL.InvoiceLineId IS NULL ;
 -- Follows up on Q2 of aggregate_functions.sql (the track catalogue).
 -- Result: 1,519 of 3,503 tracks (about 43%) have never been sold.
 /* Insight: Nearly half the catalogue (43%) has never been bought, while the other 1,984 tracks account
-   for all 2,328.60 in revenue. Worth checking which genres or media types the unsold tracks belong to.*/
+            for all 2,328.60 in revenue. Worth checking which genres or media types the unsold tracks belong to.*/
    
    
 -- Q6: Who does each employee report to?
@@ -97,6 +97,6 @@ ON E.ReportsTo = M.EmployeeId;
 
 -- Result: 8 employees. Andrew Adams has no manager, Nancy Edwards and Michael Mitchell report to him,
 /* Insight: Three levels: Andrew Adams on top, two managers (Sales, IT) below him, and 5 staff under them.
-   Worth checking how many customers each sales support agent handles, using Customer.SupportRepId.*/
+            Worth checking how many customers each sales support agent handles, using Customer.SupportRepId.*/
    
    
