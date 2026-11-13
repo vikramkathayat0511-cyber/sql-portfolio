@@ -4,7 +4,7 @@ Ranking, running totals and row-to-row comparisons on the Chinook music store da
 
 | File | Topics | Queries |
 |---|---|---|
-| [window_functions.sql](window_functions.sql) | RANK, ROW_NUMBER, PARTITION BY, running SUM, LAG, CTEs | 4 |
+| [Window_functions.sql](Window_functions.sql) | RANK, ROW_NUMBER, PARTITION BY, running SUM, LAG, CTEs | 4 |
 
 ## Queries
 
