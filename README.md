@@ -10,7 +10,7 @@ The database covers customers, invoices, tracks, albums, artists and genres. Eac
 |---|---|---|
 | [01_Basics](01_Basics/) | Aggregate, string, numeric, date and conditional functions | Done |
 | [02_Joins](02_Joins/) | JOIN, LEFT JOIN, multi-table chains, self-join | Done |
-| [03_Window_Functions](03_Window_Functions/) | Ranking, running totals, LAG, PARTITION BY | Done |
+| [03_Window_functions](03_Window_functions/) | Ranking, running totals, LAG, PARTITION BY | Done |
 
 ## Key findings so far
 
