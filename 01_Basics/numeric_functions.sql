@@ -13,8 +13,8 @@ LIMIT 20;
 -- Answers the follow-up from Q6 in the aggregate file
 -- Result: longest tracks are 88.1 and 84.8 minutes, then a group of about 49 minutes
 /* Insight: The longest tracks are far beyond normal song length, and their names (Battlestar
-   Galactica, "The Living Legend") suggest TV episodes instead of music. Worth confirming
-   with the media types.*/
+            Galactica, "The Living Legend") suggest TV episodes instead of music. Worth confirming
+            with the media types.*/
    
    
 -- Q2: How large is each of the 10 biggest tracks, in megabytes?
@@ -37,8 +37,8 @@ LIMIT 10;
 
 -- Result: furthest invoices are 404 (25.86), 299 (23.86), 96 and 194 (21.86), then 18.86 and below.
 /* Insight: All 10 invoices furthest from the 5.65 average are large ones, and the biggest
-  (25.86) is about 4.6 times the average. The smallest invoice (0.99) is only about 4.7 below
-  it, so large invoices stretch the average upward. Worth checking which customers placed these.*/
+            (25.86) is about 4.6 times the average. The smallest invoice (0.99) is only about 4.7 below
+             it, so large invoices stretch the average upward. Worth checking which customers placed these.*/
 	   
 	   
 -- Q4: What is each invoice total rounded down and to the nearest dollar, for the first 15 invoices?
@@ -51,8 +51,8 @@ LIMIT 15;
 
 -- Result: 15 invoices shown. Rounding down gives 0 to 13, rounding to the nearest gives 1 to 14.
 /* Insight: Rounding down loses almost a dollar per invoice (0.86 to 0.99), while ROUND is off by 0.14 at most.
-   For revenue reporting, ROUND is far more accurate than CAST.
-   Worth checking how much total revenue would be lost if all 412 invoices were rounded down.*/
+            For revenue reporting, ROUND is far more accurate than CAST.
+            Worth checking how much total revenue would be lost if all 412 invoices were rounded down.*/
    
 
 -- Q5: How much revenue would be lost if every invoice were rounded down instead of to the nearest dollar?
