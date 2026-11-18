@@ -11,6 +11,7 @@ The database covers customers, invoices, tracks, albums, artists and genres. Eve
 | [01_Basics](01_Basics/) | Aggregate, string, numeric, date and conditional functions | Done |
 | [02_Joins](02_Joins/) | JOIN, LEFT JOIN, multi-table chains, self-join | Done |
 | [03_Window_functions](03_Window_functions/) | Ranking, running totals, LAG, PARTITION BY | Done |
+| [04_Projects](04_Projects/) | End-to-end revenue analysis: where revenue comes from and where it could grow | Done |
 
 ## Key findings
 
@@ -29,6 +30,10 @@ The database covers customers, invoices, tracks, albums, artists and genres. Eve
 - Yearly revenue is roughly flat from 2021 to 2025 (449 to 481), and 35 of 59 month-to-month changes are exactly 0.
 - Rounding every invoice down would lose about 16.7% of revenue, so ROUND is the right tool for money.
 
+**Projects**
+- Revenue = 59 customers x 6.98 invoices x 5.65 per invoice. Revenue per customer is nearly identical across countries and sales agents, so revenue differences come from customer numbers.
+- Genre revenue is concentrated (top four genres 73.5%), but customer revenue is not (top 10 customers earn 19.4%).
+  
 ## Skills demonstrated
 
 - **Aggregation:** COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING, subqueries
@@ -36,6 +41,7 @@ The database covers customers, invoices, tracks, albums, artists and genres. Eve
 - **Dates:** strftime, julianday
 - **Joins:** inner, left, multi-table chains, self-join, finding unmatched rows
 - **Window functions:** RANK, ROW_NUMBER, PARTITION BY, running totals, LAG, CTEs
+- **Project work:** breaking revenue into its parts, concentration analysis, and written findings with recommendations
 
 ## How each query is documented
 
